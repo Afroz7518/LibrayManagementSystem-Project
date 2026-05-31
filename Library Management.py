@@ -233,7 +233,7 @@ class LibraryManagementSystem:
 
         # ── Button frame ───────────────────────────────────────────────────
         Framebutton = Frame(self.root, bd=12, relief=RIDGE, padx=20, bg="powder blue")
-        Framebutton.place(x=0, y=520, width=1530, height=70)
+        Framebutton.place(x=0, y=520, width=1530, height=100)
 
         btn_cfg = dict(font=("times new roman", 12, "bold"), width=20)
         search_btn_cfg = dict(font=("times new roman", 12, "bold"), width=14)
@@ -251,25 +251,6 @@ class LibraryManagementSystem:
         Button(Framebutton, text="Exit",      bg="#607D8B", fg="white",
                command=self.exit_app,    **btn_cfg).grid(row=0, column=5, padx=6, pady=8)
 
-        Label(Framebutton, text="Search By:", bg="powder blue",
-              font=("times new roman", 14, "bold")).grid(row=0, column=6, padx=6, pady=8)
-        com_search = ttk.Combobox(
-            Framebutton,
-            textvariable=self.search_by_var,
-            font=("times new roman", 12, "bold"),
-            width=14,
-            state="readonly"
-        )
-        com_search["values"] = ("PRN NO", "ID NO", "Book Title", "Member Type")
-        com_search.current(0)
-        com_search.grid(row=0, column=7, padx=6, pady=8)
-
-        Entry(Framebutton, textvariable=self.search_txt_var,
-              font=("times new roman", 14, "bold"), width=20).grid(row=0, column=8, padx=6, pady=8)
-        Button(Framebutton, text="Search", bg="#009688", fg="white",
-               command=self.search_data, **search_btn_cfg).grid(row=0, column=9, padx=6, pady=8)
-        Button(Framebutton, text="Show All", bg="#795548", fg="white",
-               command=self._show_all_data, **search_btn_cfg).grid(row=0, column=10, padx=6, pady=8)
 
         # ── Details / treeview frame ───────────────────────────────────────
         FrameDetails = Frame(self.root, bd=12, relief=RIDGE, padx=20, bg="powder blue")
